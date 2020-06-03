@@ -5,7 +5,9 @@ A new Flutter Template.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
-Just for this project and use it to build your apps
+
+
+Just fork this project and use it to build your apps
 
 
 A few resources to get you started if this is your first Flutter project:
