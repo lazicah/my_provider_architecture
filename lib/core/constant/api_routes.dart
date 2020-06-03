@@ -3,11 +3,12 @@ class ApiRoutes {
   ApiRoutes._();
 
   static const base_url =
-      'https://api.greaterevangelism.com/v1';
-  // static const posts = '${base_url}/posts';
-  static const initialise = "$base_url?action=initialize";
-  static const devotionals ="$base_url/devotionals";
-  static const testimonies = "$base_url/testimonies/approved";
-  static const events = "$base_url/events";
+      'https://myallies-breaking-news-v1.p.rapidapi.com/GetTopNews';
 
+
+  static const headers = {
+    "x-rapidapi-host": "myallies-breaking-news-v1.p.rapidapi.com",
+    "x-rapidapi-key": "7921cf2737msh30fff12b087bc83p11c570jsn51194425dbef",
+    "useQueryString": true
+  };
 }
