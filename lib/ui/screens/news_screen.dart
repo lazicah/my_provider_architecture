@@ -10,7 +10,7 @@ class NewsScreen extends StatelessWidget {
         builder: (context, model, _) => Scaffold(
             body: StateResponsive(
                 state: model.state,
-                busyWidget: CircularProgressIndicator(),
+                busyWidget: Center(child: CircularProgressIndicator()),
                 idleWidget: ListView.builder(
                     itemBuilder: (context, index) => ListTile(
                       leading: Icon(Icons.person),

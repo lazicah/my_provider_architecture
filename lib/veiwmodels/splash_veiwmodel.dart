@@ -20,7 +20,7 @@ class SplashViewModel extends BaseViewModel {
   }
 
   Future<void> openNewsFeed() async {
-    Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 3));
     await nav.popAllAndPushNamed(ViewRoutes.newsfeed);
   }
 

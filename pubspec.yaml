@@ -48,6 +48,7 @@ dependencies:
   
   # Utils
   connectivity: ^0.4.8+6
+  
   get_it: ^4.0.2
   mime: ^0.9.6+3
   hive: ^1.4.1+1

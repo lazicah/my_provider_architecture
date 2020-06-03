@@ -18,6 +18,8 @@ class NewsRemoteDataSourceImpl extends NewsRemoteDataSource {
     final response = await httpservice.getHttpWithHeader(
         ApiRoutes.base_url, ApiRoutes.headers);
 
+    print(response);
+
     List<NewsData> news = response.map<NewsData>((e) =>
         serializers.deserializeWith(NewsData.serializer, jsonDecode(response)));
     return news;

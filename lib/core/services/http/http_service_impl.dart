@@ -163,10 +163,10 @@ class HttpServiceImpl implements HttpService {
       response = await _dio.get(
         fullRoute,
         options: Options(
-          contentType: 'application/json',
           headers: header,
         ),
       );
+      print(response.data);
     } on DioError catch (e) {
       Logger.e('HttpService: Failed to GET ${e.message}');
       throw NetworkException(e.message);
