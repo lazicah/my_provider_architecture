@@ -7,6 +7,11 @@ abstract class HttpService {
   /// - throws `NetworkException` if GET fails
   Future<dynamic> getHttp(String route);
 
+  /// Send GET request to endpoint/[route] and return the `response`
+  /// - if successful: returns decoded json data
+  ///
+  /// - throws `NetworkException` if GET fails
+  Future<dynamic> getHttpWithHeader(String route, Map<String, dynamic> header);
  
 
   /// Send GET request to endpoint/[route] and return the `response`

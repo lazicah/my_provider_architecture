@@ -151,4 +151,30 @@ class HttpServiceImpl implements HttpService {
     // For this specific API its decodes json for us
     return completer.future;
   }
+
+  @override
+  Future getHttpWithHeader(String route, Map<String, dynamic>  header) async {
+     Response response;
+
+    Logger.d('Sending GET to $route with $header');
+
+    try {
+      final fullRoute = '$route';
+      response = await _dio.get(
+        fullRoute,
+        options: Options(
+          contentType: 'application/json',
+          headers: header,
+        ),
+      );
+    } on DioError catch (e) {
+      Logger.e('HttpService: Failed to GET ${e.message}');
+      throw NetworkException(e.message);
+    }
+
+    network_utils.checkForNetworkExceptions(response);
+
+    // For this specific API its decodes json for us
+    return response.data;
+  }
 }

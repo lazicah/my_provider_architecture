@@ -1,5 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
+import 'package:my_provider_architecture_template/core/data_sources/news/remote_datasource.dart';
+import 'package:my_provider_architecture_template/core/repositories/news_repository.dart';
 import 'package:my_provider_architecture_template/core/services/location/location_service.dart';
 import 'package:my_provider_architecture_template/core/services/navigation/navigation_service_impl.dart';
 import 'package:my_provider_architecture_template/core/utils/file_helper.dart';
@@ -37,8 +39,9 @@ Future<void> setupLocator({bool test = false}) async {
     () => ConnectivityServiceImpl(),
   );
 
-  locator.registerLazySingleton<LocationService>(() => LocationServiceImpl(),);
-  
+  locator.registerLazySingleton<LocationService>(
+    () => LocationServiceImpl(),
+  );
 
   locator.registerLazySingleton<DialogService>(() => DialogServiceImpl());
   locator.registerLazySingleton<SnackBarService>(() => SnackBarServiceImpl());
@@ -46,12 +49,11 @@ Future<void> setupLocator({bool test = false}) async {
   locator.registerLazySingleton<HttpService>(() => HttpServiceImpl());
 
   // Data sources
-  
+  locator.registerLazySingleton<NewsRemoteDataSource>(
+      () => NewsRemoteDataSourceImpl());
 
   // Repositories
- 
-
-
+  locator.registerLazySingleton<NewsRepo>(() => NewsRepoImpl());
 
   if (!test) {
     await _setupSharedPreferences();
