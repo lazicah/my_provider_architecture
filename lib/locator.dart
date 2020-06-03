@@ -4,8 +4,6 @@ import 'package:my_provider_architecture_template/core/services/location/locatio
 import 'package:my_provider_architecture_template/core/services/navigation/navigation_service_impl.dart';
 import 'package:my_provider_architecture_template/core/utils/file_helper.dart';
 
-import 'core/data_sources/testimonies/remote_datasource.dart';
-import 'core/repositories/testimont_repo.dart';
 import 'core/services/connectivity/connectivity_service.dart';
 import 'core/services/connectivity/connectivity_service_impl.dart';
 import 'core/services/dialog/dialog_service.dart';
