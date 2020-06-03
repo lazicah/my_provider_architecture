@@ -1,34 +1,56 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:my_provider_architecture_template/core/models/serializers.dart';
 
+part 'news.g.dart';
 abstract class NewsData implements Built<NewsData, NewsDataBuilder> {
+  @BuiltValueField(wireName: 'NewsID')
   String get newsID;
 
-  BuiltList<ComapanyData> get companyData;
+  @BuiltValueField(wireName: 'Company')
+  ComapanyData get company;
 
+  @BuiltValueField(wireName: 'Symbol')
   String get symbol;
 
+  @BuiltValueField(wireName: 'Title')
   String get title;
 
+  @BuiltValueField(wireName: 'Content')
   @nullable
   String get content;
 
-  String get type;
+  @BuiltValueField(wireName: 'Type')
+  int get type;
 
+  @BuiltValueField(wireName: 'Created')
   String get created;
+
+  @BuiltValueField(wireName: 'URL')
   String get url;
+
+  @BuiltValueField(wireName: 'GeneratedURL')
   String get generatedURL;
 
+  @BuiltValueField(wireName: 'Duration')
   String get duration;
 
+  @nullable
+  @BuiltValueField(wireName: 'Comments')
   BuiltList<CommentsData> get commentsData;
 
+  @nullable
+  @BuiltValueField(wireName: 'Likes')
   BuiltList<LikesData> get likesData;
 
+  @BuiltValueField(wireName: 'LikesCount')
   int get likesCount;
 
-  int get getDislikesCount;
+  @BuiltValueField(wireName: 'DislikesCount')
+  int get dislikesCount;
+
+  @BuiltValueField(wireName: 'CommentsCount')
   int get commentsCount;
 
   NewsData._();
@@ -47,6 +69,39 @@ abstract class NewsData implements Built<NewsData, NewsDataBuilder> {
 
 abstract class ComapanyData
     implements Built<ComapanyData, ComapanyDataBuilder> {
+  @BuiltValueField(wireName: 'ID')
+  int get id;
+
+  @BuiltValueField(wireName: 'Symbol')
+  String get symbol;
+
+  @BuiltValueField(wireName: 'Name')
+  String get name;
+
+  @BuiltValueField(wireName: 'ISIN')
+  @nullable
+  String get isin;
+
+  @BuiltValueField(wireName: 'CIK')
+  String get cik;
+
+  @BuiltValueField(wireName: 'TradeCount')
+  String get tradeCount;
+
+  @BuiltValueField(wireName: 'ViewCount')
+  String get viewCount;
+
+  @BuiltValueField(wireName: 'Stock')
+  @nullable
+  String get stock;
+
+  @BuiltValueField(wireName: 'Stream')
+  @nullable
+  String get stream;
+
+  @BuiltValueField(wireName: 'LogoPath')
+  String get logoPath;
+
   ComapanyData._();
   factory ComapanyData([void Function(ComapanyDataBuilder) updates]) =
       _$ComapanyData;
