@@ -4,7 +4,7 @@ import 'package:my_provider_architecture_template/core/services/key_storage/key_
 import '../locator.dart';
 
 class Constants {
-  static String appName = "GEWC Mobile";
+  static String appName = "BreakingNews";
 
   //Colors for theme
   static Color lightPrimary = Color(0xfffcfcff);
